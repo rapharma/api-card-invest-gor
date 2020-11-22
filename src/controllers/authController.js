@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
         return res.send({ user });
 
     } catch (err) {
-        return res.status(400).send({ error: 'Registro falhou - ', err })
+        return res.status(400).send({ error: 'A operação falhou', err })
     }
 });
 
