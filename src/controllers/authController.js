@@ -8,8 +8,6 @@ router.post('/register', async (req, res) => {
 
     try {
 
-        console.log(req.body)
-
         const user = await User.create(req.body);
 
         return res.send({ user });
