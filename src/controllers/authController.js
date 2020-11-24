@@ -19,17 +19,17 @@ router.post('/register', async (req, res) => {
     try {
 
         if (await User.findOne({ email }))
-            return res.status(400).send({ erro: 'Email já existe' })
+            return res.status(400).send({ erro: 'Email already exists' });
 
         const user = await User.create(req.body);
 
         return res.send({ 
-            mensagem: 'Cadastro de usuário realizado com sucesso!',
+            mensagem: 'Registered with success!',
             token: generateToken({ id: user.id }) 
         });
 
     } catch (err) {
-        return res.status(400).send({ error: 'A operação falhou : (', err })
+        return res.status(400).send({ error: 'Register failed : (', err });
     }
 });
 
