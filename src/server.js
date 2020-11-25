@@ -7,8 +7,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-require('./controllers/authController')(app);
-require('./controllers/cardInvestController')(app);
+require('./controllers/auth-controller')(app);
+require('./controllers/card-invest-controller')(app);
 // require('./controllers/index')(app);
 
 app.get('/', (req, res) => {

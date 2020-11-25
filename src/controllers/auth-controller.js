@@ -39,10 +39,10 @@ router.post('/authenticate', async (req, res) => {
     const user = await User.findOne({ email }).select('+password');
 
     if (!user)
-        return res.status(400).send({ erro: 'Email não encontrado' });
+        return res.status(400).send({ erro: 'Email not found' });
 
     if (password != user.password)
-        return res.status(400).send({ erro: 'Senha incorreta' });
+        return res.status(400).send({ erro: 'Incorrect password' });
 
     res.send({ 
         mensagem: 'Login realizado com sucesso!',
