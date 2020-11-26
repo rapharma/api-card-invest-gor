@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require('./controllers/auth-controller')(app);
-// require('./controllers/card-invest-controller')(app);
+require('./controllers/card-invest-controller')(app);
 
 let port = process.env.PORT || 3000;    
 
