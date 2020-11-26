@@ -9,10 +9,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 require('./controllers/auth-controller')(app);
 require('./controllers/card-invest-controller')(app);
-// require('./controllers/index')(app);
+
+let port = process.env.PORT || 3000;    
 
 app.get('/', (req, res) => {
-    res.send('Running')
+    res.send('Running api')
 });
 
-app.listen(3000);
+app.listen(port, () => {
+    console.log(`Running api on port ${port}`)
+});
