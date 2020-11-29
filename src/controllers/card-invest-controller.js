@@ -22,6 +22,20 @@ router.get('/fixed-income/', async (req, res) => {
 });
 
 /**
+* @api {get} / List by type
+**/
+
+router.get('/fixed-income/200', async (req, res) => {
+    try {
+        const fixedIncomes = await fixedIncomeModel.find({value: 200});
+        return res.send({ fixedIncomes });
+    } catch (err) {
+        return res.status(400).send({ erro: 'Load fixedIncomes failed' })
+    }
+});
+
+
+/**
 * @api {get} / List fixed incomes by id
 **/
 
