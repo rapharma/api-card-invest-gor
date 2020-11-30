@@ -4,7 +4,7 @@ const router = express.Router();
 
 const authMiddle = require('../middle/auth');
 
-const fixedIncomeModel = require('../models/fixed-income');
+const fixedIncomeModel = require('../models/investment');
 
 router.use(authMiddle);
 
@@ -12,7 +12,7 @@ router.use(authMiddle);
 * @api {get} / List all fixed incomes
 **/
 
-router.get('/fixed-income/', async (req, res) => {
+router.get('/investment/', async (req, res) => {
     try {
         const fixedIncomes = await fixedIncomeModel.find();
         return res.send({ fixedIncomes });
@@ -22,24 +22,10 @@ router.get('/fixed-income/', async (req, res) => {
 });
 
 /**
-* @api {get} / List by type
-**/
-
-router.get('/fixed-income/200', async (req, res) => {
-    try {
-        const fixedIncomes = await fixedIncomeModel.find({value: 200});
-        return res.send({ fixedIncomes });
-    } catch (err) {
-        return res.status(400).send({ erro: 'Load fixedIncomes failed' })
-    }
-});
-
-
-/**
 * @api {get} / List fixed incomes by id
 **/
 
-router.get('/fixed-income/:projectId', async (req, res) => {
+router.get('/investment/:projectId', async (req, res) => {
     try {
         const fixedIncome = await fixedIncomeModel.findById(req.params.projectId);
         return res.send({ fixedIncome });
@@ -52,7 +38,7 @@ router.get('/fixed-income/:projectId', async (req, res) => {
 * @api {post} / Create fixed income
 **/
 
-router.post('/fixed-income', async (req, res) => {
+router.post('/investment', async (req, res) => {
     try {
 
         const { value, date } = req.body;
@@ -69,7 +55,7 @@ router.post('/fixed-income', async (req, res) => {
 * @api {put} / Update fixed income
 **/
 
-router.put('/fixed-income/:projectId', async (req, res) => {
+router.put('/investment/:projectId', async (req, res) => {
     try {
 
         const { value, date} = req.body;
@@ -89,7 +75,7 @@ router.put('/fixed-income/:projectId', async (req, res) => {
 * @api {delete} / Delete fixed income
 **/
 
-router.delete('/fixed-income/:projectId', async (req, res) => {
+router.delete('/investment/:projectId', async (req, res) => {
     try {
         const findAndRemoveFixedIncome = await fixedIncomeModel.findByIdAndRemove(req.params.projectId);
 

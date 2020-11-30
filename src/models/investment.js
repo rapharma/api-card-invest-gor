@@ -1,10 +1,10 @@
 const mongoose = require('../database');
 
-const FixedIncomeSchema = new mongoose.Schema({
-    // type: {
-    //     type: String,
-    //     required: true,
-    // },
+const InvestmentSchema = new mongoose.Schema({
+    type: {
+        type: String,
+        required: true,
+    },
     value: {
         type: Number,
         required: true,
@@ -24,6 +24,6 @@ const FixedIncomeSchema = new mongoose.Schema({
     },
 });
 
-const FixedIncome = mongoose.model('Fixed-incomes', FixedIncomeSchema);
+const Investments = mongoose.model('Investments', InvestmentSchema);
 
-module.exports = FixedIncome;
+module.exports = Investments;
