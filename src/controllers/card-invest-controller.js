@@ -14,8 +14,8 @@ router.use(authMiddle);
 
 router.get('/investment/', async (req, res) => {
     try {
-        const fixedIncomes = await fixedIncomeModel.find();
-        return res.send({ fixedIncomes });
+        const investments = await fixedIncomeModel.find();
+        return res.send({ investments });
     } catch (err) {
         return res.status(400).send({ erro: 'Load fixedIncomes failed' })
     }
@@ -27,8 +27,8 @@ router.get('/investment/', async (req, res) => {
 
 router.get('/investment/:projectId', async (req, res) => {
     try {
-        const fixedIncome = await fixedIncomeModel.findById(req.params.projectId);
-        return res.send({ fixedIncome });
+        const investment = await fixedIncomeModel.findById(req.params.projectId);
+        return res.send({ investment });
     } catch (err) {
         return res.status(400).send({ erro: 'Load investiment failed' })
     }
@@ -43,9 +43,9 @@ router.post('/investment', async (req, res) => {
 
         const { type, value, date } = req.body;
 
-        const fixedIncome = await fixedIncomeModel.create({ type, value, date, user: req.userId });
+        const investment = await fixedIncomeModel.create({ type, value, date, user: req.userId });
         
-        return res.send({ fixedIncome });
+        return res.send({ investment });
     } catch (err) {
         return res.status(400).send({ erro: 'Create investiment failed' })
     }
@@ -60,14 +60,14 @@ router.put('/investment/:projectId', async (req, res) => {
 
         const { type, value, date} = req.body;
 
-        const fixedIncome = await fixedIncomeModel.findByIdAndUpdate(req.params.projectId, { 
+        const investment = await fixedIncomeModel.findByIdAndUpdate(req.params.projectId, { 
              type,
              value,
              date, 
              user: req.userId,
              }, { new: true });
 
-        return res.send({ fixedIncome });
+        return res.send({ investment });
     } catch (err) {
         return res.status(400).send({ erro: 'Create investiment failed' })
     }
