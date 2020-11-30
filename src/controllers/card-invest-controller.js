@@ -41,9 +41,9 @@ router.get('/investment/:projectId', async (req, res) => {
 router.post('/investment', async (req, res) => {
     try {
 
-        const { value, date } = req.body;
+        const { type, value, date } = req.body;
 
-        const fixedIncome = await fixedIncomeModel.create({ value, date, user: req.userId });
+        const fixedIncome = await fixedIncomeModel.create({ type, value, date, user: req.userId });
         
         return res.send({ fixedIncome });
     } catch (err) {
@@ -58,9 +58,11 @@ router.post('/investment', async (req, res) => {
 router.put('/investment/:projectId', async (req, res) => {
     try {
 
-        const { value, date} = req.body;
+        const { type, value, date} = req.body;
 
-        const fixedIncome = await fixedIncomeModel.findByIdAndUpdate(req.params.projectId, {value,
+        const fixedIncome = await fixedIncomeModel.findByIdAndUpdate(req.params.projectId, { 
+             type,
+             value,
              date, 
              user: req.userId,
              }, { new: true });
