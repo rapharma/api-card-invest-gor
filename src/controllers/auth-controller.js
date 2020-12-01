@@ -45,11 +45,10 @@ router.post('/authenticate', async (req, res) => {
     if (password != user.password)
         return res.status(400).send({ error: 'Incorrect password' });
 
-    res.send(
-        { 
-            mensagem: 'Logged successfully!',
-            token: generateToken({ id: user.id }) 
-        });
+    res.send({ 
+        mensagem: 'Logged successfully!',
+        token: generateToken({ id: user.id }) 
+    });
 
 });
 
