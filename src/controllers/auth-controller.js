@@ -19,13 +19,12 @@ router.post('/register', async (req, res) => {
     try {
 
         if (await User.findOne({ email }))
-            return res.status(400).send({ erro: 'Email already exists' });
+            return res.status(400).send({ error: 'Email already exists' });
 
         const user = await User.create(req.body);
 
         return res.send({ 
-            mensagem: 'Registered with success!',
-            token: generateToken({ id: user.id }) 
+            mensagem: 'Registered with success!'
         });
 
     } catch (err) {
@@ -39,10 +38,10 @@ router.post('/authenticate', async (req, res) => {
     const user = await User.findOne({ email }).select('+password');
 
     if (!user)
-        return res.status(400).send({ erro: 'Email not found' });
+        return res.status(400).send({ error: 'Email not found' });
 
     if (password != user.password)
-        return res.status(400).send({ erro: 'Incorrect password' });
+        return res.status(400).send({ error: 'Incorrect password' });
 
     res.send({ 
         mensagem: 'Login realizado com sucesso!',

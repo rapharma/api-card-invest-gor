@@ -17,7 +17,7 @@ router.get('/investment/', async (req, res) => {
         const investments = await fixedIncomeModel.find();
         return res.send({ investments });
     } catch (err) {
-        return res.status(400).send({ erro: 'Load fixedIncomes failed' })
+        return res.status(400).send({ error: 'Load fixedIncomes failed' })
     }
 });
 
@@ -30,7 +30,7 @@ router.get('/investment/:projectId', async (req, res) => {
         const investment = await fixedIncomeModel.findById(req.params.projectId);
         return res.send({ investment });
     } catch (err) {
-        return res.status(400).send({ erro: 'Load investiment failed' })
+        return res.status(400).send({ error: 'Load investiment failed' })
     }
 });
 
@@ -47,7 +47,7 @@ router.post('/investment', async (req, res) => {
         
         return res.send({ investment });
     } catch (err) {
-        return res.status(400).send({ erro: 'Create investiment failed' })
+        return res.status(400).send({ error: 'Create investiment failed' })
     }
 });
 
@@ -69,7 +69,7 @@ router.put('/investment/:projectId', async (req, res) => {
 
         return res.send({ investment });
     } catch (err) {
-        return res.status(400).send({ erro: 'Create investiment failed' })
+        return res.status(400).send({ error: 'Create investiment failed' })
     }
 });
 
@@ -82,10 +82,10 @@ router.delete('/investment/:projectId', async (req, res) => {
         const findAndRemoveFixedIncome = await fixedIncomeModel.findByIdAndRemove(req.params.projectId);
 
         return findAndRemoveFixedIncome != null ? res.send({ mensagem: 'Deleted Fixed income with success!' })
-            : res.status(400).send({ erro: 'Fixed income id does not exists' });
+            : res.status(400).send({ error: 'Fixed income id does not exists' });
 
     } catch (err) {
-        return res.status(400).send({ erro: 'Delete investiment failed' })
+        return res.status(400).send({ error: 'Delete investiment failed' })
     }
 });
 
