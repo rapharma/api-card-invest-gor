@@ -23,10 +23,11 @@ router.post('/register', async (req, res) => {
 
         const user = await User.create(req.body);
 
-        return res.send({ 
-            mensagem: 'Registered with success!',
-            user
-        });
+        return res.send(
+            { 
+                mensagem: 'Registered with success!',
+                user: user
+            });
 
     } catch (err) {
         return res.status(400).send({ error: 'Register failed : (', err });
@@ -44,10 +45,11 @@ router.post('/authenticate', async (req, res) => {
     if (password != user.password)
         return res.status(400).send({ error: 'Incorrect password' });
 
-    res.send({ 
-        mensagem: 'Logged successfully!',
-        token: generateToken({ id: user.id }) 
-    });
+    res.send(
+        { 
+            mensagem: 'Logged successfully!',
+            token: generateToken({ id: user.id }) 
+        });
 
 });
 
