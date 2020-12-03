@@ -10,13 +10,13 @@ Para inicializar digite `node server.js`.
 
 Implementação de cryptografia
 
-## Chamadas
+## Chamadas a Api
 
 BaseUrl = http://localhost:3000 ou https://api-card-invest-gor.herokuapp.com
 
 Exemplo de chamadas -> https://ibb.co/Y2ZFd03
 
-`Exemplo de cadastro de usuário`
+## Exemplo de cadastro de usuário
 
 BaseUrl/auth/register
 
@@ -41,7 +41,7 @@ RESPONSE
 
 --------------------------------------------------
 
--Autenticação
+## Autenticação
 
 BaseUrl/auth/authenticate
 
@@ -59,7 +59,7 @@ BODY
 
 --------------------------------------------------
 
--Lista de investimentos
+## Lista de investimentos
 BaseUrl/card-invest/investment
 
 GET
@@ -68,9 +68,23 @@ HEADER
 Content-Type: application/json
 Authorization: Bearer token
 
+{
+  "investments": [
+    {
+      "_id": "5fc6d7269408440004ffaf2a", // IdInvestimento
+      "type": "Fixed Income",
+      "value": 0.11,
+      "date": "2020-12-12T00:00:00.000Z",
+      "user": "5fc82bfa22fff0000499d3b2",
+      "createdAt": "2020-12-01T23:52:06.318Z",
+      "__v": 0
+    },
+  ]}
+    
+
 --------------------------------------------------
 
--Inserir investimento
+## Inserir investimento
 BaseUrl/card-invest/investment
 
 POST
@@ -88,7 +102,7 @@ BODY
 
 -------------------------------------------
 
--Atualizar investimento
+## Atualizar investimento
 BaseUrl/card-invest/investment/IdInvestimento
 
 PUT
@@ -106,7 +120,7 @@ BODY
 
 -----------------------------------------------
 
--Deletar investimento
+## Deletar investimento
 BaseUrl/card-invest/investment/IdInvestimento
 
 DELETE
