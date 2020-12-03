@@ -12,9 +12,9 @@ Implementação de cryptografia
 
 ## Chamadas a Api
 
-BaseUrl = http://localhost:3000 ou https://api-card-invest-gor.herokuapp.com
+Print de uma chamada a api -> https://ibb.co/9sDbNZd
 
-Exemplo de chamadas -> https://ibb.co/Y2ZFd03
+BaseUrl local ou heroku = http://localhost:3000 ou https://api-card-invest-gor.herokuapp.com
 
 ## Exemplo de cadastro de usuário
 
