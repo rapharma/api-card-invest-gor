@@ -6,15 +6,14 @@ Para instalar as dependencias digite `npm i`.
 
 Para inicializar digite `node server.js`.
 
-## Versão futura
+## Ambientes
 
-Implementação de cryptografia
+BaseUrl Local: http://localhost:3000 
+BaseUrl Heroku: https://api-card-invest-gor.herokuapp.com
 
 ## Chamadas a Api
 
 Print de uma chamada a api -> https://ibb.co/9sDbNZd
-
-BaseUrl local ou heroku = http://localhost:3000 ou https://api-card-invest-gor.herokuapp.com
 
 ## Exemplo de cadastro de usuário
 
@@ -129,3 +128,6 @@ HEADER
 Content-Type: application/json
 Authorization: Bearer token
 
+## Versão futura
+
+Implementação de cryptografia
