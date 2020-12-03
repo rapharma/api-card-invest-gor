@@ -9,7 +9,7 @@ const fixedIncomeModel = require('../models/investment');
 router.use(authMiddle);
 
 /**
-* @api {get} / List all fixed incomes
+* @api {get} / List all investments
 **/
 
 router.get('/investment/', async (req, res) => {
@@ -22,7 +22,7 @@ router.get('/investment/', async (req, res) => {
 });
 
 /**
-* @api {get} / List fixed incomes by id
+* @api {get} / List investments by id
 **/
 
 router.get('/investment/:projectId', async (req, res) => {
@@ -35,7 +35,7 @@ router.get('/investment/:projectId', async (req, res) => {
 });
 
 /**
-* @api {post} / Create fixed income
+* @api {post} / Create Investment
 **/
 
 router.post('/investment', async (req, res) => {
@@ -52,7 +52,7 @@ router.post('/investment', async (req, res) => {
 });
 
 /**
-* @api {put} / Update fixed income
+* @api {put} / Update Investment
 **/
 
 router.put('/investment/:projectId', async (req, res) => {
@@ -74,7 +74,7 @@ router.put('/investment/:projectId', async (req, res) => {
 });
 
 /**
-* @api {delete} / Delete fixed income
+* @api {delete} / Delete Investment
 **/
 
 router.delete('/investment/:projectId', async (req, res) => {
