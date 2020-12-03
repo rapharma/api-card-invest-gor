@@ -14,9 +14,9 @@ Implementação de cryptografia
 
 BaseUrl = http://localhost:3000 ou https://api-card-invest-gor.herokuapp.com
 
-![Exemplo de chamadas](https://ibb.co/Y2ZFd03)
+Exemplo de chamadas -> https://ibb.co/Y2ZFd03
 
--Exemplo de cadastro de usuário
+`Exemplo de cadastro de usuário`
 
 BaseUrl/auth/register
 
